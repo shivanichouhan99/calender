@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,400;10..48,500&family=Dancing+Script:wght@700&family=Inter:wght@500&family=Poppins:wght@300&family=Roboto:ital@1&family=Rubik:ital,wght@1,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    background : url("img2.jpg") no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+
+}
+.wrapper{
+    width: 450px;
+    background: white;
+    border-radius: 10px;
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+header .current-date{
+    font-size: 22px;
+    font-weight: 500;
+}
+header .icons span{
+    height: 38px;
+    font-size: 22px;
+    color: #878787;
+    width: 38px;
+    margin: 5px 1px;
+    padding: 6px 17px;
+    text-align: center;
+    line-height: 38px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+header .icons span:hover{
+    background: #f2f2f2;
+}
+header .icons span:last-child{
+    margin-right: -10px;
+}
+.calender{
+    padding: 20px;
+}
+.calender ul{
+    display: flex;
+    list-style: none;
+    flex-wrap:wrap;
+    text-align: center;
+}
+.calender .days{
+    margin-bottom: 20px;
+}
+.calender .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.calender .days li:hover{
+    color: #878787;
+}
+.days li.inactive{
+    color: #a69898;
+}
+.days li.active{
+    color: #fff;
+}
+.calender .weeks li{
+font-weight: 500;
+cursor: pointer;
+}
+.calender ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+.calender .days li::before{
+    position: absolute;
+    content: " ";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%,-50%);
+    background: #f2f2f2;
+    border-radius: 50%;
+}
+.days li:hover::before{
+    background: #f2f2f2;
+}
+.days li.active::before{
+    background:rgb(241, 148, 179);
+}
+
+@media screen and (max-width:550px){
+    .wrapper{
+        width: 300px;
+        flex-wrap: wrap;
+    }
+    header .current-date{
+        font-size: 15px;
+        font-weight: 350;
+    }
+    header .icons span{
+        font-size: 18px;
+    }
+    .calender .weeks li {
+        font-weight: 400;
+    }
+    .calender .days li{
+        margin-top: 15px;
+}
+.calender .days li::before{
+    height: 31px;
+    width: 33px;
+}
+
+}
